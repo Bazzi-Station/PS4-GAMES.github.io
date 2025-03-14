@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PS4 Games Library</title>
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Storage Selection Modal -->
+  <div id="storageModal" class="modal">
+    <div class="modal-content">
+      <h2>Select Your Storage</h2>
+      <p>Please choose the storage capacity you need:</p>
+      <button onclick="selectStorage(500)">500 GB</button>
+      <button onclick="selectStorage(1000)">1 TB</button>
+      <button onclick="selectStorage(2000)">2 TB</button>
+    </div>
+  </div>
+
+
+  <!-- Hamburger Menu -->
+  <div class="hamburger-menu" onclick="toggleSidebar()">☰</div>
+
+  <div class="header">
+    <img src="Playstation Logo.png" alt="Logo" class="logo">
+    <h1>Bazzi Station</h1>
+  </div>
+
+  <!-- Add the GIF here -->
+  <div class="playstation-container">
+    <img src="Website Picture.jpg" alt="website picture">
+  </div>
+
+
+
+  <!-- Sidebar for Selected Games -->
+<div id="sidebar" class="sidebar">
+  <div class="sidebar-header">
+    <h3>Selected Games</h3>
+    <button class="close-sidebar" onclick="toggleSidebar()">×</button>
+  </div>
+  <div id="selected-games-list"></div>
+</div>
+
+
+  <div class="options">
+    <div class="user_storage">
+      <button id="500gb" onclick="changeStorageTo500gb()" role="button" class="button-33">500 GB</button>
+      <button id="1tb" onclick="changeStorageTo1tb()" role="button" class="button-32">1 TB</button>
+      <button id="2tb" onclick="changeStorageTo2tb()" role="button" class="button-32">2 TB</button>
+    </div>
+    <div class="user_control">
+      <button id="track"><span id="spaceLeft"></span> Space Left</button>
+      <button id="clear">Reset</button>
+      <button id="sendWhatsApp">Send to WhatsApp</button>
+    </div>
+  </div>
+  <div class="games">
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="GTA V.jpg" alt="GTA V">
+      </div>
+      <div class="info">
+        <p>GTA V</p>
+        <p>Storage: 98.94 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="FC25.jpg" alt="FC25">
+      </div>
+      <div class="info">
+        <p>FC25 (تعليق عربي)</p>
+        <p>Storage: 53.34 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Spider-Man.jpeg" alt="Spider-Man Marvel">
+      </div>
+      <div class="info">
+        <p>Spider-Man Marvel</p>
+        <p>Storage: 63.13 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Minecraft.jpg" alt="Mincecraft">
+      </div>
+      <div class="info">
+        <p>Minecraft</p>
+        <p>Storage: 10.66 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="It Takes Two.jpeg" alt="It Takes Two">
+      </div>
+      <div class="info">
+        <p>It Takes Two</p>
+        <p>Storage: 37.37 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="WWE 2K24.jpg" alt="WWE 2K24">
+      </div>
+      <div class="info">
+        <p>WWE 2K24</p>
+        <p>Storage: 92.04 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+       <img src="Red Dead Redemption II.jpg" alt="Red Dead Redemption II">
+      </div>
+      <div class="info">
+        <p>Red Dead Redemption II</p>
+        <p>Storage: 116.30 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+       <img src="Spider-Man Miles Morales.jpg" alt="Spider-Man Miles Morales">
+      </div>
+      <div class="info">
+        <p>Spider-Man Miles Morales</p>
+        <p>Storage: 54.37 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Hogwarts Legacy.jpg" alt="Hogwarts Legacy">
+      </div>
+      <div class="info">
+        <p>Hogwarts Legacy</p>
+        <p>Storage: 55.09 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Need For Speed Heat.jpg" alt="Need For Speed Heat">
+      </div>
+      <div class="info">
+        <p>Need For Speed Heat</p>
+        <p>Storage: 36.17 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Need for Speed Rivals.jpg" alt="Need for Speed Rivals">
+      </div>
+      <div class="info">
+        <p>Need for Speed Rivals</p>
+        <p>Storage: 17.01 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Mortal Kombat 11.jpg" alt="Mortal Kombat 11">
+      </div>
+      <div class="info">
+        <p>Mortal Kombat 11</p>
+        <p>Storage: 69.79 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Watch Dogs Legion.jpg" alt="Watch Dogs Legion">
+      </div>
+      <div class="info">
+        <p>Watch Dogs Legion</p>
+        <p>Storage: 52.02 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+       <img src="Uncharted 4.jpg" alt="Uncharted 4: A Thief's End">
+      </div>
+      <div class="info">
+        <p>Uncharted 4: A Thief's End</p>
+        <p>Storage: 60.77 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Uncharted Lost Legacy.jpg" alt="Uncharted: The Lost Legacy">
+      </div>
+      <div class="info">
+        <p>Uncharted: The Lost Legacy</p>
+        <p>Storage: 46.33 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="The Last of Us Remastered.jpg" alt="The Last of Us Remastered">
+      </div>
+      <div class="info">
+        <p>The Last of Us Remastered</p>
+        <p>Storage: 39.12 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="God of War.jpg" alt="God of War">
+      </div>
+      <div class="info">
+        <p>God of War</p>
+        <p>Storage: 45.94 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="God of War Ragnarok.jpg" alt="God of War Ragnarök">
+      </div>
+      <div class="info">
+        <p>God of War Ragnarök</p>
+        <p>Storage: 111.1 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Resident Evil 4.jpg" alt="Resident Evil 4">
+      </div>
+      <div class="info">
+        <p>Resident Evil 4</p>
+        <p>Storage: 34.07 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Resident Evil 7.jpg" alt="Resident Evil 7">
+      </div>
+      <div class="info">
+        <p>Resident Evil 7</p>
+        <p>Storage: 25.99 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Far Cry 3.jpeg" alt="Far Cry 3">
+      </div>
+      <div class="info">
+        <p>FAR CRY 3</p>
+        <p>Storage: 8.29 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Mafia.jpg" alt="Mafia: Definitive Edition">
+      </div>
+      <div class="info">
+        <p>Mafia: Definitive Edition</p>
+        <p>Storage: 45.89 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Star Wars Jedi Fallen Order.jpg" alt="Star Wars Jedi Fallen Order">
+      </div>
+      <div class="info">
+        <p>Star Wars Jedi: Fallen Order</p>
+        <p>Storage: 45.79 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Tomb Raider Definitive Edition.jpg" alt="Tomb Raider: Definitive Edition">
+      </div>
+      <div class="info">
+        <p>Tomb Raider: Definitive Edition</p>
+        <p>Storage: 15.43 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+    <div class="game">
+      <div onclick="selectGame(this)">
+        <img src="Rise of The Tomb Raider.jpg" alt="Rise of The Tomb Raider">
+      </div>
+      <div class="info">
+        <p>Rise of The Tomb Raider</p>
+        <p>Storage: 16.93 GB</p>
+        <button class="select" onclick="selectGame(this)">Select</button>
+      </div>
+    </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Call of Duty Ghost.jpg" alt="Call of Duty Ghost">
+    </div>
+    <div class="info">
+      <p>Call of Duty Ghost</p>
+      <p>Storage: 33.79 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Call of Duty Modern Warfare II Campain Remastered.jpg" alt="Call of Duty Modern Warfare II Campain Remastered">
+    </div>
+    <div class="info">
+      <p>Call of Duty Modern Warfare II Campaign Remastered</p>
+      <p>Storage: 47.15 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Assassin's Creed Mirage.jpg" alt="Assassin's Creed Mirage">
+    </div>
+    <div class="info">
+      <p>Assassin's Creed Mirage</p>
+      <p>Storage: 28.50 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Assassin's Creed Odyssey.jpg" alt="Assassin's Creed Odyssey">
+    </div>
+    <div class="info">
+      <p>Assassin's Creed Odyssey</p>
+      <p>Storage: 80.78 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Assassin's Creed Origins.jpg" alt="Assassin's Creed Origins">
+    </div>
+    <div class="info">
+      <p>Assassin's Creed Origins</p>
+      <p>Storage: 53.41 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="FAR CRY 6.jpg" alt="FAR CRY 6">
+    </div>
+    <div class="info">
+      <p>FAR CRY 6</p>
+      <p>Storage: 103.70 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="The Witcher.jpg" alt="The Witcher 3: Wild Hunt">
+    </div>
+    <div class="info">
+      <p>The Witcher 3: Wild Hunt</p>
+      <p>Storage: 51.98 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="A Way Out.jpg" alt="A Way Out">
+    </div>
+    <div class="info">
+      <p>A Way Out</p>
+      <p>Storage: 17.50 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Batman Arkham Knight.jpeg" alt="Batman Arkham Knight">
+    </div>
+    <div class="info">
+      <p>Batman Arkham Knight</p>
+      <p>Storage: 49.68 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Injustice 2.jpg" alt="Injustice 2">
+    </div>
+    <div class="info">
+      <p>Injustice 2</p>
+      <p>Storage: 35.34 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Just Cause 4.jpg" alt="Just Cause 4">
+    </div>
+    <div class="info">
+      <p>Just Cause 4</p>
+      <p>Storage: 58.67 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Crash Insane Triology.jpg" alt="Crash Insane Triology">
+    </div>
+    <div class="info">
+      <p>Crash Insane Triology</p>
+      <p>Storage: 24.07 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Hello Neighbor.jpg" alt="Hello Neighbor">
+    </div>
+    <div class="info">
+      <p>Hello Neighbor</p>
+      <p>Storage: 2.20 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Rayman Legends.jpg" alt="Rayman Legends">
+    </div>
+    <div class="info">
+      <p>Rayman Legends</p>
+      <p>Storage: 9.04 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="FC24.jpg" alt="FC24">
+    </div>
+    <div class="info">
+      <p>FC24 (English Subtitles)</p>
+      <p>Storage: 52.68 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Detroit Become Human.jpg" alt="Detroit: Become Human">
+    </div>
+    <div class="info">
+      <p>Detroit: Become Human</p>
+      <p>Storage: 43.48 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Beyond Two Souls.jpg" alt="Beyond Two Souls">
+    </div>
+    <div class="info">
+      <p>Beyond Two Souls</p>
+      <p>Storage: 34.18 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Cars 3 Driven to Win.jpg" alt="Cars 3 Driven to Win">
+    </div>
+    <div class="info">
+      <p>Cars 3 Driven to Win</p>
+      <p>Storage: 6.72 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Cartoon Network Battle Crashers.jpg" alt="Cartoon Network Battle Crashers">
+    </div>
+    <div class="info">
+      <p>Cartoon Network Battle Crashers</p>
+      <p>Storage: 00.15 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Farmer's Dynasty.jpg" alt="Farmer's Dynasty">
+    </div>
+    <div class="info">
+      <p>Farmer's Dynasty</p>
+      <p>Storage: 9.20 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Homefront The revolution.jpg" alt="Homefront The revolution">
+    </div>
+    <div class="info">
+      <p>Homefront The revolution</p>
+      <p>Storage: 41.38 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Hunting Simulator 2.jpg" alt="Hunting Simulator 2">
+    </div>
+    <div class="info">
+      <p>Hunting Simulator 2</p>
+      <p>Storage: 25.26 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Lego Marvel Super Heroes 2.jpg" alt="Lego Marvel Super Heroes 2">
+    </div>
+    <div class="info">
+      <p>Lego Marvel Super Heroes 2</p>
+      <p>Storage: 20.57 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="MXGP2020.jpg" alt="MXGP2020">
+    </div>
+    <div class="info">
+      <p>MXGP2020</p>
+      <p>Storage: 19.59 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Power Rangers Battle for the Grid.jpg" alt="Power Rangers Battle for the Grid">
+    </div>
+    <div class="info">
+      <p>Power Rangers Battle for the Grid</p>
+      <p>Storage: 2.66 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Sonic Forces.jpg" alt="Sonic Forces">
+    </div>
+    <div class="info">
+      <p>Sonic Forces</p>
+      <p>Storage: 18.31 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Star Wars Jedi Fallen Order.jpg" alt="Star Wars Jedi Fallen Order">
+    </div>
+    <div class="info">
+      <p>Star Wars Jedi Fallen Order</p>
+      <p>Storage: 45.80 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Tekken 7.jpg" alt="Tekken 7">
+    </div>
+    <div class="info">
+      <p>Tekken 7</p>
+      <p>Storage: 55.39 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="Toy Story 3.jpg" alt="Toy Story 3">
+    </div>
+    <div class="info">
+      <p>Toy Story 3</p>
+      <p>Storage: 00.90 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+  <div class="game">
+    <div onclick="selectGame(this)">
+      <img src="WRC 7.jpg" alt="WRC 7">
+    </div>
+    <div class="info">
+      <p>WRC 7</p>
+      <p>Storage: 19.91 GB</p>
+      <button class="select" onclick="selectGame(this)">Select</button>
+    </div>
+  </div>
+</div>
+  <div class="footer">
+    <h1>Bazzi Station</h1>
+  </div>
+  <div class="alert">
+    <p>You are out of storage!</p>
+  </div>
+  <script src="script.js"></script>
+  </body>
+</html>
