@@ -152,7 +152,7 @@ document.getElementById('sendWhatsApp').addEventListener('click', function() {
   message += `Space Left: ${(storage - totalStorage).toFixed(2)} GB`;
 
   // Use the specific WhatsApp number
-  let phoneNumber = "+96181406179";
+  let phoneNumber = "+96176451439";
   let whatsappLink = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${encodeURIComponent(message)}`;
   window.open(whatsappLink, '_blank');
 });
